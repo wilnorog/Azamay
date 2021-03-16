@@ -21,6 +21,148 @@ namespace panoss
             Outmass();
             Zmeyka();
         }
+         public static ConsoleKeyInfo move()
+        {
+            ConsoleKeyInfo cki;
+            cki = Console.ReadKey();
+            memory = cki;
+            return cki;
+        }
+
+        public static char[,] Zmeyka()
+        {
+            while (x != 0 && y != 0 && x != pole && y != pole && crash == false)
+            {
+                if (Console.KeyAvailable == true)
+                {
+                    ConsoleKeyInfo cki = move();
+                    if (cki.Key.ToString() == "A")
+                    {
+                        Movehvost();
+                        mass[x, y - 1] = mass[x, y];
+                        if (n == 0)
+                            mass[x, y] = ' ';
+                        y -= 1;
+                        mass[x, y] = 'X';
+                    }
+                    else if (cki.Key.ToString() == "W")
+                    {
+                        Movehvost();
+                        mass[x - 1, y] = mass[x, y];
+                        if (n == 0)
+                            mass[x, y] = ' ';
+                        x -= 1;
+                        mass[x, y] = 'X';
+                    }
+                    else if (cki.Key.ToString() == "S")
+                    {
+                        Movehvost();
+                        mass[x + 1, y] = mass[x, y];
+                        if (n == 0)
+                            mass[x, y] = ' ';
+                        x += 1;
+                        mass[x, y] = 'X';
+                    }
+                    else if (cki.Key.ToString() == "D")
+                    {
+                        Movehvost();
+                        mass[x, y + 1] = mass[x, y];
+                        if (n == 0)
+                            mass[x, y] = ' ';
+                        y += 1;
+                        mass[x, y] = 'X';
+                    }
+
+                }
+                else if (Console.KeyAvailable == false)
+                {
+                    if (memory.Key.ToString() == "A")
+                    {
+                        Movehvost();
+                        mass[x, y - 1] = mass[x, y];
+                        if (n == 0)
+                            mass[x, y] = ' ';
+                        y -= 1;
+                        mass[x, y] = 'X';
+                    }
+                    else if (memory.Key.ToString() == "W")
+                    {
+                        Movehvost();
+                        mass[x - 1, y] = mass[x, y];
+                        if (n == 0) 
+                            mass[x, y] = ' ';
+                        x -= 1;
+                        mass[x, y] = 'X';
+                    }
+                    else if (memory.Key.ToString() == "S")
+                    {
+                        Movehvost();
+                        mass[x + 1, y] = mass[x, y];
+                        if (n == 0) 
+                            mass[x, y] = ' ';
+                        x += 1;
+                        mass[x, y] = 'X';
+                    }
+                    else if (memory.Key.ToString() == "D")
+                    {
+                        Movehvost();
+                        mass[x, y + 1] = mass[x, y];
+                        if (n == 0) 
+                            mass[x, y] = ' ';
+                        y += 1;
+                        mass[x, y] = 'X';
+                    }
+                }
+
+                if (x == q && y == z)
+                {
+                    CreateEda(mass);
+                    Plushvost();
+                }
+
+                Console.SetCursorPosition(0, 0);
+                Outmass();
+
+                for (int i = 1; i < n - 1; i++)
+                {
+                    if (x == snakeX[i] && y == snakeY[i])
+                    {
+                        crash = true;
+                    }
+                }
+
+                Thread.Sleep(speed);
+            }
+            Console.WriteLine("Defeat");
+            return mass;
+        }
+        public static void Movehvost() 
+        {
+            for (int i = 0; i < n; i++)
+            {
+                mass[snakeX[i], snakeY[i]] = ' ';
+            }
+
+            for (int i = n; i >= 1; i--)
+            {
+                snakeX[i] = snakeX[i - 1];
+                snakeY[i] = snakeY[i - 1];
+            }
+
+            snakeX[0] = x;
+            snakeY[0] = y;
+
+            for (int i = 0; i < n; i++)
+            {
+                mass[snakeX[i], snakeY[i]] = '*';
+            }
+        }
+        public static void Plushvost() 
+        {
+            snakeX[n] = x;
+            snakeY[n] = y;
+            n++;
+        }
        public static char[,] CreateMass()
         {
             int slojnost;
