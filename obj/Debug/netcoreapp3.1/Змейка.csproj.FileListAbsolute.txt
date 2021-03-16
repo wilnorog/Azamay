@@ -1,0 +1,13 @@
+G:\РКИС\Змейка\bin\Debug\netcoreapp3.1\Змейка.exe
+G:\РКИС\Змейка\bin\Debug\netcoreapp3.1\Змейка.deps.json
+G:\РКИС\Змейка\bin\Debug\netcoreapp3.1\Змейка.runtimeconfig.json
+G:\РКИС\Змейка\bin\Debug\netcoreapp3.1\Змейка.runtimeconfig.dev.json
+G:\РКИС\Змейка\bin\Debug\netcoreapp3.1\Змейка.dll
+G:\РКИС\Змейка\bin\Debug\netcoreapp3.1\Змейка.pdb
+G:\РКИС\Змейка\obj\Debug\netcoreapp3.1\Змейка.csprojAssemblyReference.cache
+G:\РКИС\Змейка\obj\Debug\netcoreapp3.1\Змейка.AssemblyInfoInputs.cache
+G:\РКИС\Змейка\obj\Debug\netcoreapp3.1\Змейка.AssemblyInfo.cs
+G:\РКИС\Змейка\obj\Debug\netcoreapp3.1\Змейка.dll
+G:\РКИС\Змейка\obj\Debug\netcoreapp3.1\Змейка.pdb
+G:\РКИС\Змейка\obj\Debug\netcoreapp3.1\Змейка.csproj.CoreCompileInputs.cache
+G:\РКИС\Змейка\obj\Debug\netcoreapp3.1\Змейка.genruntimeconfig.cache
