@@ -163,6 +163,30 @@ namespace panoss
             snakeY[n] = y;
             n++;
         }
+        public static char[,] CreateEda(char[,] mass)
+        {
+            Random rand = new Random();
+        A:
+            q = rand.Next(1, pole - 1);
+            z = rand.Next(1, pole - 1);
+
+            for (int i = 0; i < n; i++)
+            {
+                if(q == snakeX[i] && z == snakeY[i])               
+                    goto A;                
+            }
+
+            if (x == q && y == z )
+            {
+                goto A;
+            }
+
+            else
+            {
+                mass[q, z] = 'O';
+            }
+            return mass;
+        }
        public static char[,] CreateMass()
         {
             int slojnost;
